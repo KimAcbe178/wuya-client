@@ -1,6 +1,8 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLabel
 from PyQt6.QtCore import Qt
 import sys
+from ui.trade_settings import TradeSettings 
+from ui.api_settings import APISettings
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -34,9 +36,13 @@ class MainWindow(QMainWindow):
         layout.addWidget(monitor_button)
 
     def open_api_settings(self):
+        dialog = APISettings()
+        dialog.exec()
         print('API 설정 열기')
 
     def open_trade_settings(self):
+        dialog = TradeSettings()
+        dialog.exec()
         print('거래 설정 열기')
 
     def open_monitoring(self):
